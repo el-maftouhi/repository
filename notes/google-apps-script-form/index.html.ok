@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="/css/fonts.css"/>
+<link rel="stylesheet" type="text/css" href="/css/comments.css"/>
+<link rel="stylesheet" type="text/css" href="form.css"/>
+<script src="/js/jquery.js"/></script>
+<script src="/js/jquery.csv.js"/></script>
+<script src="/js/validator.js"/></script>
+<script src="/js/script.js"/></script>
+
+
+<script>documentTitle();</script>
+</head>
+
+<body>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#11165;</button>
+
+<!-- start #wrapper -->
+<div id="wrapper">
+
+<!-- start #header -->
+<div id="header">
+	<div class="menu" id="menu">
+		<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/articles/index.html">Articles</a></li>
+		<li><a href="/notes/index.html">Notes</a></li>
+		<li><a href="/contact">Contact</a></li>
+		</ul>
+		<a id= "icon" class="icon" onmouseover="changeIcon()" onmouseleave="restoreIcon()" onclick="myFunction()"></a>
+		<form id="searchform" action="#" method="get">
+				<input type="text" id="search" name="search" value="" placeholder="Search"/>
+		</form>
+	</div>
+</div>
+<!-- end #header -->
+
+<!-- start #content -->
+<div id="content">
+
+<script>pathFunc();</script>
+
+<script> h1() </script>
+
+<div id="test"></div>
+
+<div id="info"></div>
+
+<h2>Post a message</h2>
+
+<div>
+<p>Your email address will not be published. Required fields are marked *</p>
+</div>
+
+
+<form id="form" autocomplete="on">
+		<input id="name" name="username" type="text" placeholder="Name" required="" value="" />
+		<input id="email" name="useremail" type="text" placeholder="Email" required="" value="" />
+		<textarea id="message" name="message" placeholder="Message" required=""></textarea>
+		<input id="submit" type="submit" value="Post" /></li>
+</form>
+
+</div>
+<!-- end #content -->
+
+<!-- start #footer -->
+<div id="footer">
+	<p>&copy; 2024 &nbsp; - &nbsp; www.maftouhi.org</p>
+</div>
+<!-- end #footer -->
+
+</div>
+<!-- end #wrapper -->
+
+<script> toTop() </script>
+
+<script>
+    var scriptURL = 'https://script.google.com/macros/s/AKfycbz--yIMXHqasbBnCDfs3TFpnfezU4WyXu3lqgZ1LYnymwqMBzhgeBCNcslEqE7caUNH/exec'
+    var form = document.forms['form']
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(function(response) {
+                console.log('Success!', response)
+            })
+            .catch(function(error) {
+                console.error('Error!', error.message)
+            })
+    })
+</script>
+
+</body>
+</html>

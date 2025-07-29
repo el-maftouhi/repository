@@ -1,0 +1,73 @@
+
+---------------------------------------
+    100 – Thin
+    200 – Extra Light (Ultra Light)
+    300 – Light
+    400 – Normal
+    500 – Medium
+    600 – Semi Bold (Demi Bold)
+    700 – Bold
+    800 – Extra Bold (Ultra Bold)
+    900 – Black (Heavy)
+
+---------------------------------------
+
+for i in $(ls); do 
+	echo $(echo ${i%%.*} | sed 's/I/i/g;
+	s/T/t/g; 
+	s/S/s/g;
+	s/M/m/g;
+	s/L/l/g;
+	s/R/r/g;
+	s/E/e/g;
+	s/B/b/g;
+	s/bolditalic/bold-italic/g;
+	s/lightitalic/light-italic/g;
+	s/mediumitalic/medium-italic/g;
+	s/thinitalic/thin-italic/g;
+	s/blackitalic/black-italic/g;
+	s/extrabold/extra-bold/;
+	s/semibold/semi-bold/;
+	s/extralight/extra-light/');
+done
+
+---------------------------------------
+
+if [ -e inter ]; then rm -rf inter; fi
+mkdir inter
+
+for i in $(ls *.ttf); do 
+	cp $i dir/$(echo ${i%%.*} | sed 's/I/i/g;
+	s/T/t/g; 
+	s/S/s/g;
+	s/M/m/g;
+	s/L/l/g;
+	s/R/r/g;
+	s/E/e/g;
+	s/B/b/g;
+	s/bolditalic/bold-italic/g;
+	s/lightitalic/light-italic/g;
+	s/mediumitalic/medium-italic/g;
+	s/thinitalic/thin-italic/g;
+	s/blackitalic/black-italic/g;
+	s/extrabold/extra-bold/;
+	s/semibold/semi-bold/;
+	s/extralight/extra-light/').ttf;
+done
+--------------------------------------
+
+echo "$(ls inter/*.ttf)" | sed '
+	/italic/{s/\(.*\)/\n  font-style:  italic;\n  font-weight:;\n  src: url(\"\1\");\n}/g;}
+	/italic/!{s/\(.*\)/\n  font-style:  normal;\n  font-weight:;\n  src: url(\"\1\");\n}/g;}
+	s/\(.*\)/\@font\-face {\n  font\-family: \"inter\";  \1\n/g;
+	/regular/{s/font-weight:/font-weight: 400/g;}
+	/medium/{s/font-weight:/font-weight: 500/g;}
+	/black/{s/font-weight:/font-weight: 900/g;}
+	/bold/{s/font-weight:/font-weight: 700/g;}
+	/extra-bold/{s/700/800/g;}
+	/semi-bold/{s/700/600/g;}
+	/thin/{s/font-weight:/font-weight: 100/g;}
+	/light/{s/font-weight:/font-weight: 300/g;}
+	/extra-light/{s/300/200/g;}
+	/thin/!{/light/!{/bold/!{/medium/!{/black/!{/italic/{s/font-weight:/font-weight: 400/g;}}}}}}
+	' > inter/inter.css

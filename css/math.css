@@ -1,0 +1,289 @@
+/***************************** 
+          math style
+*****************************/
+#math-content {
+	margin: 0;
+	padding: 0;
+	font-size: 13pt;
+	color: #333333;
+	font-family: 'mathjax-main', 'latin-modern';
+	line-height: 120%;
+}
+
+#math-content *{
+	/*font-family: MJX_Main;*/
+	font-family: 'mathjax-main';
+	font-family: 'mathjax-main', 'latin-modern';
+}
+
+#math-content h1 {
+	margin-bottom: 20px;
+	font-family: 'charter-itc';
+	font-weight: bold;
+	color: #333333;
+	font-size: 20pt;
+}
+
+#math-content h2 {
+	margin-top: 25px;
+	margin-bottom: 20px;
+	font-family: 'charter-itc';
+	font-weight: bold;
+	color: #333333;
+	font-size: 16pt;
+}
+
+#math-content h3 {
+	margin-top: 20px;
+	margin-bottom:15px;
+	font-family: 'charter-itc';
+	font-weight: bold;
+	font-size: 15pt;
+	color: #333333;
+}
+
+#math-content   h1 { counter-reset: section; }
+
+#math-content   h2 { counter-reset: subsection theorem;}
+
+#math-content   h3 { counter-reset: subsubsection; }
+
+#math-content   h2::before {
+	content: counter(section) ".";
+	counter-increment: section;
+	padding-right: 10px;
+}
+    
+#math-content   h3::before {
+	content: counter(section) "." counter(subsection) ".";
+	counter-increment: subsection;
+	padding-right: 5px;
+}
+    
+#math-content p {
+	margin-top: 0px;			/** important !!! **/
+	padding: 0;
+	margin: 10px 0 10px 0;
+	text-align: justify;
+	line-height: 120%;
+}
+
+#math-content .theorem {
+	margin: 10px 0 10px 0; 
+	font-family: 'mathjax-main';
+	font-style: italic;
+	line-height: 120%;
+}
+
+#math-content .theorem > strong:first-child {
+	font-style: normal;
+	font-weight: bold;
+  	font-size: 105%;
+}
+
+#math-content .theorem > strong:first-child:after {
+	content: " "counter(section)"."counter(theorem)".";
+	counter-increment: theorem;
+	font-weight: bold;
+	font-family: 'mathjax-main';
+	font-style: normal;
+  font-size: 105%;
+	padding-right: 10px;
+}
+
+#math-content .proof {
+	margin: 10px 0 10px 0; 
+	display: block;
+	font-style: normal;
+	text-align: justify;
+}
+
+#math-content .proof:before {
+	content: "Proof.";
+  font-weight: bold;
+	font-family: 'mathjax-main';
+  font-size: 100%;
+	padding-right: 5px;
+}
+
+#math-content .proof:after {
+	content: "\2610"; /*BALLOT BOX ( unicode character : U+2610 )*/
+	float: right;
+	position: relative;
+}
+
+#math-content .lemma {
+	display: block;
+	font-family: 'mathjax-main';
+	font-style: italic;
+	margin-bottom: 10px;
+	counter-reset: lem;
+	line-height: 120%;
+}
+
+#math-content .lemma:before {
+	content: "Lemma "counter(section)"."counter(theorem)".";
+	counter-increment: theorem;
+	font-family: 'mathjax-main';
+	font-weight: bold;
+	font-style: normal;
+  font-size: 105%;
+  padding-right: 10px;
+}
+
+#math-content .definition {
+	display: block;
+	font-family: 'mathjax-main';
+	font-style: italic;
+}
+
+#math-content .definition:before {
+	content: "Definition.";
+	font-weight: bold;
+	font-family: 'mathjax-main';
+  font-size: 105%;
+}
+/*********************
+			biblio
+**********************/
+#math-content #biblio {
+	margin-top: 50px;
+	line-height: 100%;
+	padding: 0;
+}
+
+#math-content #biblio:before {
+	font-family: 'charter-itc';
+  font-size: 22px;
+	font-weight: bold;
+ 	content: "References";
+ 	position: relative;
+	left: 0px;
+	display:block;
+	padding-bottom: 20px;
+	padding-top: 5px;
+	color: #333333;
+}
+
+#math-content #biblio ol {
+    counter-reset: list;
+}
+
+#math-content #biblio ol > li {
+    list-style: none;
+    position: relative;
+	margin-bottom: 10px;
+}
+
+#math-content #biblio ol > li:before {
+    box-sizing: border-box;
+    content:  "[" counter(list) "]";
+    counter-increment: list;
+    left: -40px;
+    padding-right: 10px;
+    position: absolute;
+    text-align: right;
+    width: 40px;
+}
+
+/*********************
+		 abstract
+**********************/
+#math-content abstract {
+	margin: 20px auto 30px auto; 
+	display: block;
+	font-style: normal;
+	text-align: justify;
+	font-size: 90%;
+	line-height: 120%;
+}
+
+#math-content abstract:before {
+	content: "Abstract.";
+  font-weight: bold;
+	font-family: 'mathjax-main';
+  font-size: 110%;
+	padding-right: 5px;
+	color: #333333;
+}
+/*********************
+		 author
+**********************/
+#math-content .author{
+	width: 50%;
+	color: #333333;
+	margin-bottom: 10px;
+}
+
+#math-content .author .name{
+	font-weight: bold;
+	font-size:  16px;
+
+}
+#math-content .author .address{
+	font-weight: normal;
+	font-size:  12px;
+	line-height: 14px;
+}
+#math-content .author .email{
+	font-weight: normal;
+	font-size:  12px;
+	line-height: 12px;
+	font-family: 'courier-prime';
+}
+
+/*********************
+		list-roman
+**********************/
+
+#math-content ol.list-roman  {
+	margin-left: 45px;
+}
+
+#math-content ol.list-roman li { 
+	counter-increment: list;
+	list-style-type: none;
+	position: relative;
+	margin-bottom: 1em;
+}
+
+#math-content ol.list-roman li:before {
+	font-weight: normal;
+	word-spacing: -3px;
+	content: "( " counter(list , lower-roman) " )";
+	position: absolute;
+	left: -2.0em;
+}
+
+/***********************************
+ subsection heading without number
+***********************************/
+
+#math-content  .h {
+	margin: 10px 0;
+	font-weight: bold;
+	font-size: 110%;
+}
+#math-content .h span{
+	/*font-size: 14px;*/			/* for math font size */
+}
+
+
+
+/*
+#test {
+    margin: 1em;
+    color: red;
+    border: 1px solid blue;
+}
+
+#test:before {
+    content: 'Before ';
+    color: green;
+}
+
+#output {
+    font-family: monospace;
+    margin: 1em;
+}
+*/

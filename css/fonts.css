@@ -1,0 +1,583 @@
+
+/********
+ arial
+********/
+
+@font-face {
+    font-family: "arial";
+    src: url("/fonts/arial/arial-regular.ttf");
+}
+
+@font-face {
+    font-family: "arial";
+    src: url("/fonts/arial/arial-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "arial";
+    src: url("/fonts/arial/arial-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "arial";
+    src: url("/fonts/arial/arial-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "arial";
+    src: url("/fonts/arial/arial-black.ttf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "arial";
+    src: url("/fonts/arial/arial-black-italic.ttf");
+    font-style: italic;
+    font-weight: 900;
+}
+
+/*********
+ roboto
+**********/
+
+@font-face {
+    font-family: "roboto";
+    src: url("/fonts/roboto/roboto.ttf");
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("/fonts/roboto/roboto-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("/fonts/roboto/roboto-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("/fonts/roboto/roboto-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "roboto-medium";
+    src: url("/fonts/roboto/roboto-medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "roboto-medium";
+    src: url("/fonts/roboto/roboto-medium-italic.ttf");
+    font-style: italic;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "roboto-black";
+    src: url("/fonts/roboto/roboto-black.ttf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "roboto-black";
+    src: url("/fonts/roboto/roboto-black-italic.ttf");
+    font-style: italic;
+    font-weight: 900;
+}
+
+/**********
+ helvetica
+**********/
+
+@font-face {
+    font-family: "helvetica";
+    src: url("/fonts/helvetica/helvetica-regular.otf");
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("/fonts/helvetica/helvetica-bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("/fonts/helvetica/helvetica-oblique.otf");
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: "helvetica";
+    src: url("/fonts/helvetica/helvetica-bold-oblique.otf");
+    font-style: oblique;
+    font-weight: bold;
+}
+
+/*********
+ cousine
+**********/
+
+@font-face {
+    font-family: "cousine";
+    src: url("/fonts/cousine/cousine-regular.ttf");
+}
+
+@font-face {
+    font-family: "cousine";
+    src: url("/fonts/cousine/cousine-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "cousine";
+    src: url("/fonts/cousine/cousine-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "cousine";
+    src: url("/fonts/cousine/cousine-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*************
+ courier-prime
+**************/
+
+@font-face {
+    font-family: "courier-prime";
+    src: url("/fonts/courier-prime/courier-prime.ttf");
+}
+
+@font-face {
+    font-family: "courier-prime";
+    src: url("/fonts/courier-prime/courier-prime-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "courier-prime";
+    src: url("/fonts/courier-prime/courier-prime-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "courier-prime";
+    src: url("/fonts/courier-prime/courier-prime-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/**************
+ charter-itc
+**************/
+
+@font-face {
+    font-family: "charter-itc";
+    src: url("/fonts/charter-itc/charter-itc-regular.otf");
+}
+
+@font-face {
+    font-family: "charter-itc";
+    src: url("/fonts/charter-itc/charter-itc-bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "charter-itc";
+    src: url("/fonts/charter-itc/charter-itc-italic.otf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "charter-itc";
+    src: url("/fonts/charter-itc/charter-itc-bold-italic.otf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/********
+ mlm10
+********/
+
+@font-face {
+    font-family: "mlm10";
+    src: url("/fonts/mlm10/mlm10-regular.ttf");
+}
+
+@font-face {
+    font-family: "mlm10";
+    src: url("/fonts/mlm10/mlm10-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "mlm10";
+    src: url("/fonts/mlm10/mlm10-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "mlm10";
+    src: url("/fonts/mlm10/mlm10-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/************
+ latin-modern
+************/
+
+@font-face {
+    font-family: "latin-modern";
+    src: url("/fonts/latin-modern/latin-modern-regular.otf");
+}
+
+@font-face {
+    font-family: "latin-modern";
+    src: url("/fonts/latin-modern/latin-modern-bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "latin-modern";
+    src: url("/fonts/latin-modern/latin-modern-italic.otf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "latin-modern";
+    src: url("/fonts/latin-modern/latin-modern-bold-italic.otf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*************
+ mathjax-main
+**************/
+
+@font-face {
+    font-family: "mathjax-main";
+    src: url("/fonts/mathjax-main/mathjax-main-regular.otf");
+}
+
+@font-face {
+    font-family: "mathjax-main";
+    src: url("/fonts/mathjax-main/mathjax-main-bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "mathjax-main";
+    src: url("/fonts/mathjax-main/mathjax-main-italic.otf");
+    font-style: italic;
+}
+
+/*************
+ dejavu-serif
+**************/
+
+@font-face {
+    font-family: "dejavu-serif";
+    src: url("/fonts/dejavu-serif/dejavu-serif-regular.ttf");
+}
+
+@font-face {
+    font-family: "dejavu-serif";
+    src: url("/fonts/dejavu-serif/dejavu-serif-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "dejavu-serif";
+    src: url("/fonts/dejavu-serif/dejavu-serif-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "dejavu-serif";
+    src: url("/fonts/dejavu-serif/dejavu-serif-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/************
+ dejavu-sans
+*************/
+
+@font-face {
+    font-family: "dejavu-sans";
+    src: url("/fonts/dejavu-sans/dejavu-sans-regular.ttf");
+}
+
+@font-face {
+    font-family: "dejavu-sans";
+    src: url("/fonts/dejavu-sans/dejavu-sans-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "dejavu-sans";
+    src: url("/fonts/dejavu-sans/dejavu-sans-oblique.ttf");
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: "dejavu-sans";
+    src: url("/fonts/dejavu-sans/dejavu-sans-bold-oblique.ttf");
+    font-style: oblique;
+    font-weight: bold;
+}
+
+/*****************
+ dejavu-sans-mono
+******************/
+
+@font-face {
+    font-family: "dejavu-sans-mono";
+    src: url("/fonts/dejavu-sans-mono/dejavu-sans-mono-regular.ttf");
+}
+
+@font-face {
+    font-family: "dejavu-sans-mono";
+    src: url("/fonts/dejavu-sans-mono/dejavu-sans-mono-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "dejavu-sans-mono";
+    src: url("/fonts/dejavu-sans-mono/dejavu-sans-mono-oblique.ttf");
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: "dejavu-sans-mono";
+    src: url("/fonts/dejavu-sans-mono/dejavu-sans-mono-bold-oblique.ttf");
+    font-style: oblique;
+    font-weight: bold;
+}
+
+/****************
+ source-sans-pro
+*****************/
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("/fonts/source-sans-pro/source-sans-pro-regular.ttf");
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("/fonts/source-sans-pro/source-sans-pro-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("/fonts/source-sans-pro/source-sans-pro-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "source-sans-pro";
+    src: url("/fonts/source-sans-pro/source-sans-pro-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/****************
+ source-code-pro
+*****************/
+
+@font-face {
+    font-family: "source-code-pro";
+    src: url("/fonts/source-code-pro/source-code-pro-regular.ttf");
+}
+
+@font-face {
+    font-family: "source-code-pro";
+    src: url("/fonts/source-code-pro/source-code-pro-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "source-code-pro";
+    src: url("/fonts/source-code-pro/source-code-pro-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "source-code-pro";
+    src: url("/fonts/source-code-pro/source-code-pro-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*****************
+ source-serif-pro
+******************/
+
+@font-face {
+    font-family: "source-serif-pro";
+    src: url("/fonts/source-serif-pro/source-serif-pro-regular.ttf");
+}
+
+@font-face {
+    font-family: "source-serif-pro";
+    src: url("/fonts/source-serif-pro/source-serif-pro-bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "source-serif-pro";
+    src: url("/fonts/source-serif-pro/source-serif-pro-italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "source-serif-pro";
+    src: url("/fonts/source-serif-pro/source-serif-pro-bold-italic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*********
+ inter
+*********/
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 900;
+  src: url("/fonts/inter/inter-black-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 900;
+  src: url("/fonts/inter/inter-black.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 700;
+  src: url("/fonts/inter/inter-bold-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 700;
+  src: url("/fonts/inter/inter-bold.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 800;
+  src: url("/fonts/inter/inter-extra-bold-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 800;
+  src: url("/fonts/inter/inter-extra-bold.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 200;
+  src: url("/fonts/inter/inter-extra-light-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 200;
+  src: url("/fonts/inter/inter-extra-light.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 400;
+  src: url("/fonts/inter/inter-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 300;
+  src: url("/fonts/inter/inter-light-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 300;
+  src: url("/fonts/inter/inter-light.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 500;
+  src: url("/fonts/inter/inter-medium-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 500;
+  src: url("/fonts/inter/inter-medium.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 400;
+  src: url("/fonts/inter/inter-regular.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 600;
+  src: url("/fonts/inter/inter-semi-bold-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 600;
+  src: url("/fonts/inter/inter-semi-bold.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  italic;
+  font-weight: 100;
+  src: url("/fonts/inter/inter-thin-italic.ttf");
+}
+
+@font-face {
+  font-family: "inter";  
+  font-style:  normal;
+  font-weight: 100;
+  src: url("/fonts/inter/inter-thin.ttf");
+}
+

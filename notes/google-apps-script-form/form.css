@@ -1,0 +1,118 @@
+
+/*************
+ #form
+*************/
+
+#form {
+	width: auto;
+	box-sizing: border-box;
+	margin: 15px 0;
+}
+
+#form input[type='text'] {
+	width: 50%;
+	box-sizing: border-box;
+	border: 1px solid #aaaaaa;
+	padding: 8px;
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+
+#form textarea {
+	padding: 5px;
+	border: 1px solid #aaaaaa;	
+	width: 100%;
+	box-sizing: border-box;
+	height: 240px;
+	resize: none;
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+
+#form textarea:focus,
+#form input:focus {
+	outline: 0;
+}
+
+#form input[type='submit'] {
+	height: 30px;
+	border-radius: 3px;
+	padding: 5px;
+	background: #f5f5f5;
+	border: 1px solid #aaaaaa;
+	color: #666666;
+	font-weight: bold;
+	/*text-transform: uppercase;*/
+	width: 20%;
+	opacity: 0.85;
+	outline-style: none;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+	#form input[type='text'] {
+		width: 100%;
+	}
+}
+
+#form textarea::placeholder,
+#form input::placeholder {
+	opacity: 0.3;
+}
+
+/*************
+ #posts
+*************/
+
+#content #posts {
+	margin: 0 20px 20px 20px;
+}
+
+#content #posts table {
+	/*margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #aaaaaa;*/
+}
+
+#content #posts tr th {
+	padding: 10px 10px;
+	background-color: #f5f5f5;
+	text-align: left;
+}
+
+#content #posts tr td {
+	padding: 2px 10px;
+	min-width: 100px;
+}
+
+/*************
+ #info
+*************/
+
+#info {
+	display: none;
+	height: 50px; 
+	border-radius: 5px;
+	margin: 10px 20px;
+}
+
+#info p { 
+	text-align: center;
+	line-height: 50px;
+	color: #0F8F60; 
+}
+
+#info p::before {
+	content: '';
+	height: 50px;
+	width: 50px;
+	padding: 10px 30px 10px 10px;
+	background-image: url("/img/check-circle.svg");
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 0.85;
+}
+
+

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" href="/css/style.css"/>
+<link rel="stylesheet" href="/css/fonts.css"/>
+<link rel="stylesheet" href="/css/math.css"/>
+<link rel="stylesheet" href="/css/comments.css"/>
+<script src="/js/jquery.js"/></script>
+<script src="/js/jquery.csv.js"/></script>
+<script src="/js/validator.js"/></script>
+<script src="/js/script.js"/></script>
+<script src="/js/comments.js"/></script>
+<script src="/js/mathjax.js"/></script>
+<script src="/mathjax/MathJax.js?config=TeX-AMS_HTML"/></script>
+<script defer src="/js/top.js"/></script>
+<title>Weak Balance in Random Graphs</title>
+</head>
+
+<body>
+
+<button id="buttonTop" title="Go to top"></button>
+
+<!-- start #wrapper -->
+<div id="wrapper">
+
+<!-- start #header -->
+<div id="header">
+	<div class="menu" id="menu">
+		<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/notes/index.html">Notes</a></li>
+		<li><a href="/articles/index.html">Articles</a></li>
+		<li><a href="/books/index.html">Books</a></li>
+		<li><a href="/contact">Contact</a></li>
+		</ul>
+		<a id= "icon" class="icon" onmouseover="changeIcon()" onmouseleave="restoreIcon()" onclick="myFunction()"></a>
+		<form id="searchform" action="#" method="get">
+				<input type="text" id="search" name="search" value="" placeholder="Search"/>
+		</form>
+	</div>
+</div>
+<!-- end #header -->
+
+<!-- start #content -->
+<div id="content">
+
+<div class="breadcrumb"></div>
+
+<div id="math-content">
+
+<h1 id="title">Weak Balance in Random Graphs</h1>
+
+<div class="author">
+<div class="name">A. EL Maftouhi </div>
+<div class="address">Laboratoire de Recherche en Informatique, Université Paris Sud, Bât. 650, 91405 Orsay Cedex, France</div>
+<div class="email">hakim.maftouhi@gmail.com</div>
+</div>
+
+<div class="author">
+<div class="name">Y. Manoussakis </div>
+<div class="address"> Laboratoire de Recherche en Informatique, Université Paris Sud, Bât. 650, 91405 Orsay Cedex, France </div>
+<div class="email"> yannis@lri.fr </div>
+</div>
+
+<abstract>
+In this paper, we strengthen some results in [El Maftouhi <i>et al.</i>
+Balance in Random Signed Graphs, <i>Internet Mathematics</i> <b>8(4) </b> 364-380, 2012]
+on balance in random signed graphs and study the weak balance. We show that
+many of the phenomena observed for the balance of random signed graphs extend to weak balance.
+</abstract>
+
+
+<h2>Introduction and terminology</h2>
+
+<p>
+In this work we deal with questions on balance and weak balance in random graphs.
+The theory of balance goes back to Heider [<a href="#bibitem-9">9</a>] who asserted that a social
+system is balanced if  there is no tension and that unbalanced social structures
+exhibit a tension resulting in a tendency to change in the direction of balance.
+Since this first work of Heider, the notion of balance has been extensively
+studied by many mathematicians and psychologists [<a href="#bibitem-6">6</a>, <a href="#bibitem-13">13</a>].
+From a mathematical point of view, the most appropriate model for studying
+structural balance is that of signed graphs.
+<p>
+
+<p>
+Formally, a signed graph $(G,\sigma)$ is a graph $G=(V,E)$ together with a function
+$ \sigma: E \to \{+,-\},$ which associates each edge with the sign +
+or $-$. In such a signed graph, a subset $H$ of $E(G)$ is said to be positive if
+it contains an even number of negative edges; otherwise it is said to be negative.
+A signed graph $G$ is <i>balanced</i> if each cycle of $G$ is positive.
+Otherwise it is unbalanced. In 1956, Cartwright and Harary [<a href="#bibitem-3">3</a>] obtained
+the following important result which states an equivalent definition of balance.
+</p>
+
+<div class="theorem">
+<strong>Theorem</strong> A signed graph is balanced if and only
+if its vertex set can be partitioned into two classes so that every edge joining
+vertices within a class is positive and every edge joining vertices between classes
+is negative.
+</div>
+
+<p>
+One may also consider a weaker notion of balance. A signed graph is called \emph{weakly
+balanced} if it contains no cycle with exactly one negative edge. Interestingly,
+as for balanced graphs, we also have a nice characterization of weakly balanced graphs
+as Theorem \ref{thm:01} (see [<a href="#bibitem-4">4</a>, <a href="#bibitem-6">6</a>]) below shows.
+</p>
+
+<div class="theorem">
+A signed graph is weakly balanced if and only if its vertex set can be partitioned
+into different classes so that every edge connecting two vertices that belong to
+the same class is positive and every edge connecting two vertices that belong to
+different classes is negative.
+</div>
+
+<p>
+Balance in random social systems is considered in [<a href="#bibitem-7">7</a>] (see also [<a href="#bibitem-8">8</a>]).
+In [<a href="#bibitem-7">7</a>], the authors defined a probabilistic model
+where  relations between individuals are assumed to be  random. A good mathematical
+model for representing such random social structures is the so called random signed
+graph $G(n,p,q)$ defined as follows. Let $p , q \gt 0$ be fixed, $0 \lt p+q \le 1$. Given a
+set of $n$ vertices, between each pair of distinct vertices there is either a positive
+edge with probability $p$ or a negative edge with probability $q$ or else there is
+no edge with probability $1 - (p + q)$. The edges between different pairs of vertices
+are chosen independently. Throughout this article the expression ``\textit{ asymptotically
+almost surely}'' (abbreviated a.a.s.) means ``\textit{with probability tending to $1$ as
+$n$ tends to infinity}''. In the random signed graph model introduced in [<a href="#bibitem-7">7</a>],
+the authors proved that, a.a.s., $G(n,p,q)$ is unbalanced. Then
+they established bounds on the maximum order of a balanced induced subgraph. They
+also studied the relative m-balance and the frustration index (sometimes, also called
+the line index of balance; for the definitions, see below). Further recent studies
+have also looked at dynamic aspects of structural balance theory, modelling how the set
+of friendships and antagonisms in a graph, in other words, the labelling of the edges,
+might evolve over time as the social network implicitly seeks out structural balance.
+Antal, Krapivsky, and Redner [<a href="#bibitem-1">1</a>] study a model in which we start with a
+random labeling (choosing + or - randomly for each edge) and repeatedly balance
+each unbalanced triangle by flipping one of its labels. The model turns out to
+resemble the mathematical models one uses for certain physical systems as they
+reconfigure to minimize their energy [<a href="#bibitem-1">1</a>, <a href="#bibitem-11">11</a>].
+</p>
+
+<p>
+Throughout this paper we will use the following definitions and notations.
+The \DEF{(weak) frustration index} $\delta$ of a signed graph $G$ is the smallest
+number of edges whose removal from $G$ results in a (weakly) balanced graph. We
+denote by $X_m$ the total number of (positive and negative) cycles of length $m$ in
+$G(n,p,q)$. By $X_m^u$ we denote the number of \emph{unbalanced} cycles of length $m$,
+i.e., the cycles of length $m$ that contain exactly one negative edge.
+By $X_m^-$ we denote the number of cycles of length $m$ that have odd number of
+negative edges. The \emph{relative weak unbalance} is defined as the ratio $\rho(m)=X_m^u/X_m$.
+Similarly, the \emph{relative (classical) unbalance} is defined as $\rho_c(m)=X_m^-/X_m$.
+</p>
+
+<p>
+The rest of the paper is organized as follows.
+In Section 2, we study the threshold for balance and weak balance in random graphs,
+including strengthening one of the main results in [<a href="#bibitem-7">7</a>]. In Section 3,
+we study the order of the maximum weakly balanced component of $G_{n,p,q}$. In Section 4,
+we consider the weak frustration-index. We conclude the paper with a study of
+the relative weak unbalance in Section 5.
+</p>
+
+<h2>Threshold for balance and weak balance</h2>
+
+<p>
+El Maftouhi <i>et al.</i> [<a href="#bibitem-7">7</a>] proved that the random signed
+graph $G(n, p, p)$, where $p= c/n$ for a sufficiently large
+constant $c$, is asymptotically almost surely unbalanced. Here, we strengthen
+this result by dropping the assumption that $p=q$.
+We first present some preliminary results that will be used later in this section.
+</p>
+
+<h3>Monotonicity</h3>
+
+<p>
+Recall that a property $\Qcal$ of graphs is <i>increasing </i> if it is preserved
+under the addition of edges. It is well-known in the random graph model $G(n,p)$
+that if $\Qcal$ is an increasing property then $\PP[G(n,p_1) \text{ satisfies } \Qcal]
+\leq \PP[G(n,p_2) \text{ satisfies } \Qcal] $, whenever $p_1 \leq p_2$.
+We show that this natural inequality extends to random signed graphs.
+</p>
+
+<p>
+A <i>signed graph property</i> is a set of signed graphs closed under (signed) isomorphism.
+We recall that two signed graphs $(G_1, \sigma_1)$ and $(G_2, \sigma_2)$ are isomorphic
+if there is a graph isomorphism $\theta$ that preserves the signs of the edges, that is,
+an isomorphism $\theta : G_1\to G_2$ such that $\sigma_1(uv)=\sigma_2(\theta(uv))$ for each edge $uv$.
+A property of signed graphs is <i>increasing</i> if it is preserved under the addition of (signed) edges.
+</p>
+
+<div class="lemma" id="lem:2.1">
+Let $\Qcal$ be an increasing property of signed graphs. Let
+$0\leq p_1 \leq p_2\leq 1$ , $0\leq q_1 \leq q_2\leq 1$ with $0\leq p_1+q_1 \leq 1$ and
+$0\leq p_2+q_2 \leq 1$. Then
+
+\begin{equation*}
+\PP\big[G(n,p_1,q_1) \text{ satisfies } \Qcal \big] \leq
+\PP\big[G(n,p_2,q_2) \text{ satisfies } \Qcal \big].
+\end{equation*}
+</div>
+
+<div class="proof">
+<p>
+To prove this lemma we will use a version of the two-round exposure technique adapted
+to random signed graphs. Let $G(n,p_0,q_0)$ be a random signed graph generated
+independently on the same vertex set as $G(n,p_1,q_1)$. Let $G(n,p',q')$ be the random
+signed graph obtained by adding to $G(n,p_1,q_1)$ all the edges of
+$G(n,p_0,q_0)$ that do not belong to $G(n,p_1,q_1)$ (with their signs), that is
+</p>
+
+\begin{equation*}
+E(G(n,p',q'))=E(G(n,p_1,q_1))\cup
+\left [E(G(n,p_0,q_0))\setminus E(G(n,p_1,q_1))\right ].
+\end{equation*}
+
+<p>Thus</p>
+
+\begin{equation*}
+p'=p_1+(1-p_1-q_1)p_0 ~ \text{ and } ~ q'=q_1+(1-p_1-q_1)q_0.
+\end{equation*}
+By setting
+\begin{equation*}
+{\displaystyle p_0=\frac{p_2-p_1}{1-p_1-q_1}} ~ \text{ and } ~
+{\displaystyle q_0=\frac{q_2-q_1}{1-p_1-q_1}},
+\end{equation*}
+
+<p>
+it follows that $G(n,p_2,q_2)$ and $G(n,p',q')$ have the same probability distribution.
+On the other hand, as $G(n,p_1,q_1)\subset G(n,p',q')$ and $\Qcal$ is an increasing property,
+the event  $\left \{G(n,p_1,q_1) \text{ satisfies } \Qcal \right \}$ is included in the event
+$\left \{G(n,p',q') \text{ satisfies } \Qcal \right \}$, which completes the proof.
+</p>
+</div>
+
+<h3>The uniform model and asymptotic equivalence</h3>
+
+<p>
+Given $1 \leq M \leq {n\choose 2}$ and $0 \leq \alpha \leq 1$,
+the {\it uniform random signed graph} on $n$ vertices, denoted by $G(n,M,\alpha)$, is obtained
+by choosing at random $M$ edges and assigning independently to each edge a positive sign with
+probability $\alpha$ or a negative sign with probability $1-\alpha$. Formally, for every fixed
+signed graph $G$ of size $M$ with $|E^+(G)|$ positive edges and $|E^-(G)|$ negative edges,
+we have
+\begin{equation*}
+\PP\left [G(n,M,\alpha)=G\right ]=\frac{\alpha^{|E^+(G)|}(1-\alpha)^{|E^-(G)|}}
+{\displaystyle {{n\choose 2}\choose M}}.
+\end{equation*}
+</p>
+
+<p>
+It is not hard to see that the uniform random signed graph $G(n,M,\alpha)$ can be viewed as
+the $M-$th stage of the random signed graph process
+$\left\{G(n,M,\alpha)\right\}_M$ , $0\leq M\leq {n\choose 2}$, defined as follows.
+We start with no edges at time $0$, and at each step a new edge is selected uniformly at random
+from edges not already selected and assigned a positive sign with probability
+$\alpha$ or a negative sign with probability $1-\alpha$.
+</p>
+
+<p>
+The following result shows in particular that, under certain conditions, if a property $\Qcal$
+holds a.a.s. for the model $G(n,M,\alpha)$, it also holds a.a.s. for the model $G(n,p,q)$, for
+appropriate values of $p$ and $q$.
+The result does not require any restriction on $\Qcal$.
+</p>
+
+<div class="theorem">
+<strong>Theorem</strong> Let $\Qcal$ be a property of signed graphs. Let
+$p=p(n)\geq 0,~q=q(n)\geq 0$ with  $0 \leq p+q \leq 1$. Let $0\leq a \leq 1$.
+If for every $M=M(n)$ such that
+\begin{equation*}
+M={n\choose 2}(p+q)+
+O \left ( \sqrt{{n\choose 2}(p+q)(1-p-q)} \right )
+\end{equation*}
+we  have $\PP\left[ G\left(n,M,p/(p+q)\right) \text{ satisfies } \Qcal \right]
+\rightarrow a$ as $n \rightarrow \infty$, then also we have
+$\PP\left[ G(n,p,q) \text{ satisfies } \Qcal \right] \rightarrow a$ as
+$n \rightarrow \infty$.
+</div>
+
+<p>
+We omit the proof of this theorem since the arguments used are similar to those employed in
+classical random graphs, see for example [<a href="#bibitem-10">10</a>]. The proof uses the elementary law of
+total probability and Chebyshev's inequality. We just need to check that
+\begin{equation*}
+\PP\big[ G(n,p,q) \text{ satisfies } \Qcal ~ \big\vert ~ |E(G(n,p,q))| = M \big]
+= \PP\big[ G(n,M,p/(p+q)) \text{ satisfies } \Qcal \big] ,
+\end{equation*}
+which is straightforward.
+</p>
+
+<h3>Threshold for balance</h3>
+
+<p>
+It is well-known that the threshold for the existence of cycles in the random graph model
+$G(n,p)$ is $1/n$. Thus, if $p+q=o(1/n)$ then $G(n,p,q)$ is a.a.s. balanced. The following
+theorem gives conditions on $p$ and $q$ under which $G(n,p,q)$ is a.a.s. unbalanced.
+</p>
+
+
+<div class="theorem">
+Let $\epsilon , \delta > 0$ be fixed. If $p+q \geq (1+\epsilon)/n$ and
+$q\geq\delta/n$ then $G(n,p,q)$ is a.a.s. unbalanced.
+</div>
+
+<div class="proof">
+As &ldquo;<i>unbalance</i>&rdquo; is an increasing property, by <a href="#lem:2.1">Lemma 2.1</a>, it is sufficient
+to prove the theorem for $p+q = (1+\epsilon)/n$ and $q=\delta/n$.
+As defined before, let $\big\{G(n,M,\alpha)\big\}_M$, where
+
+$$
+\alpha= p/(p+q)=(1+\epsilon -\delta)/(1+\epsilon),
+$$
+
+be the associated random graph process.
+By Theorem \ref{thm:2.2}, it suffices to show
+that $G(n,M,\alpha)$ is a.a.s. unbalanced when $M=(1+\epsilon)n/2$.
+From the well-known result of Erd&#337;s and Renyi concerning the phase transition phenomenon of
+random graphs, we know that at stage $M_0 =(1+\epsilon/2)n/2$, $G(n,M_0,\alpha)$ a.a.s. has a giant
+component of size at least $c(\epsilon)n$, where $c(\epsilon)$ is a constant depending
+only on $\epsilon$. Let $V_{0}$ and $E(V_0)$ be the vertex set and the edge set of the giant
+component at time $M_0$, respectively. So we have
+\begin{equation}\label{lab:2.1}
+\PP[|V_0|\geq c(\epsilon)n]\geq 1-o(1)
+\end{equation}
+After this stage we add the remaining $\epsilon n/4$ edges
+one by one. For every $1 \leq i\leq \epsilon n/4 $, let $e_i=x_iy_i$ denote the edge added
+to the graph at time $M_i=M_0 + i$. If $x_i$ and $y_i$ are both in $V_{0}$,
+then there exits a path $P_{x_iy_i}$ joining $x_i$ and $y_i$. Thus,
+\begin{eqnarray*}
+ \PP\big[e_i \text{ closes a negative cycle } \big\vert ~ x_i , y_i \in V_{0} \big]
+&\geq& \PP\big[P_{x_iy_i}\text{ is positive, }e_i\text{ is negative } \big\vert~x_i,y_i \in V_{0}\big] \\
+&+&\PP\big[P_{x_iy_i}\text{ is negative, }e_i\text{ is positive }\big\vert~x_i,y_i \in V_{0}\big] \\
+&\geq& \min(\alpha, 1-\alpha).
+\end{eqnarray*}
+The probability that an edge $e_i$ has its end-vertices in $V_0$ is
+\begin{eqnarray*}
+\PP\big [~ x_i , y_i \in V_{0}\big ]
+&=&\frac{{|V_{0}|\choose 2}-|[V_{0}]^2\cap E(G(n,M_{i-1},\alpha))|}{{n\choose 2}-M_0 -i +1}.
+\end{eqnarray*}
+Therefore,
+\begin{eqnarray*}
+\PP\big[e_i\text{ closes a negative cycle in }E(V_0)\big]
+&\geq&\frac{{|V_{0}|\choose 2}-\big\vert[V_{0}]^2\cap E(G(n,M_{i-1},\alpha))\big\vert}
+{{n\choose 2}-M_0 -i +1}\min(\alpha, 1-\alpha).
+\end{eqnarray*}
+Since
+\begin{eqnarray*}
+\PP\big[e_i\text{ closes a negative cycle}\big]
+&\geq&\PP\big[e_i\text{ closes a negative cycle in }E(V_0)~\big\vert~|V_0|\geq c(\epsilon)\big]
+\PP\big[|V_0|\geq c(\epsilon)\big],
+\end{eqnarray*}
+and by (\ref{lab:2.1}), we have
+\begin{eqnarray*}
+\PP\big[e_i\text{ closes a negative cycle}\big]
+&\geq&(1-o(1))\frac{{c(\epsilon)n\choose 2}-(1+\frac{\epsilon}{2})\frac{n}{2} -i +1}
+{{n\choose 2}-(1+\frac{\epsilon}{2})\frac{n}{2} -i +1}\min(\alpha, 1-\alpha)\\
+&\geq& c^2(\epsilon)\min(\alpha, 1-\alpha)(1-o(1)).
+\end{eqnarray*}
+Thus,
+\begin{equation*}
+ \PP\big[e_i\text{ closes a negative cycle}\big] \geq C(\epsilon,\delta),
+\end{equation*}
+where $C(\epsilon,\delta) < 1$ is a constant (not depending on $n$). It follows that
+\begin{equation*}
+\PP\big[\text{for some } 1 \leq i \leq \epsilon n /4 , ~~e_i
+\textit{ closes a negative cycle}\big]
+\geq 1- \left (1-C(\epsilon,\delta)\right )^{\frac{\epsilon n}{4}}=1-o(1),
+\end{equation*}
+and thus $G(n,p,q)$ is unbalanced a.a.s.
+</div>
+
+<h3>Threshold for weak balance</h3>
+
+<p>
+Using the ideas of the previous theorem, we can derive an analogous result for weak balance.
+</p>
+
+<div class="theorem"> 
+Let $\epsilon , \delta > 0$ be fixed. If
+$p \geq (1+\epsilon)/n$ and
+$q\geq\delta/n$ then $G(n,p,q)$ is a.a.s. weakly unbalanced.
+</div>
+
+<div class="proof">
+We may assume that $p=(1+\epsilon)/n$ an $q=\delta/n$. As defined in the previous theorem,
+let $\big\{G(n,M,\alpha)\big\}_M$, where $\alpha= p/(p+q)=(1+\epsilon )/(1+\epsilon+\delta)$,
+be the associated random graph process. At stage $M_0=(1+\epsilon/2)n/2$, the random graph with
+only positive edges a.a.s. has a giant component of order at least $c(\epsilon )n$, and, clearly,
+any edge $e_i$ added at time $M_i=M_0+i$ will close an unbalanced cycle (cycle with exactly one
+negative edge) if $e_i$ is negative and if it has both end-vertices in the giant component.
+Using a similar computation as in Theorem \ref{thm:2.3},one can easily show that at time $M_i$ we have
+\begin{equation*}
+ \PP\big [e_i\text{ closes an unbalanced cycle}\big ] \geq
+\frac{c^2(\epsilon)\delta}{(1+\epsilon+\delta)}(1-o(1)).
+\end{equation*}
+Now, employing a similar argument as in Theorem \ref{thm:2.3}, we conclude that
+$G(n,p,q)$ a.a.s. is weakly unbalanced.
+</div>
+
+<h2>The maximum order of a weakly balanced subgraph</h2>
+
+<p>
+Let $G(n,p,q)$ be the random signed graph on $n$ vertices where $p$ and $q$ are fixed,
+$0<p+q<1$. It follows from the last Theorem of the previous section that $G(n,p,q)$
+is weakly unbalanced. We provide then estimates of the maximum size of a weakly balanced
+induced subgraph in $G(n,p,q)$.
+</p>
+
+<p>
+Let $\beta'=\beta'(G(n,p,q))$ denote the maximum order of a weakly balanced induced subgraph of
+$G(n,p,q)$.  Since each induced subgraph of $G(n,p,q)$ containing no negative edges or
+no positive edges is weakly balanced, we have
+\begin{equation}\label{lab:3.1}
+\beta'(G(n,p,q)) \geq \alpha(G(n,p)) ~~{\rm and}~~\beta'(G(n,p,q)) \geq \alpha(G(n,q)),
+\end{equation}
+where $\alpha(G(n,p))$ denotes the independence number of the random graph $G(n,p)$.
+</p>
+
+<p>
+It is well-known that the independence number of $G(n,p)$ is a.a.s. concentrated
+on two consecutive integer values, see [<a href="#bibitem-12">12</a>].
+More precisely, for any $\epsilon > 0$, we have
+\begin{equation}\label{lab:3.2}
+\Pr \Bigl[\bigl\lfloor d(n,p)-\epsilon \bigr\rfloor \leq \alpha (G(n,p)) \leq
+\bigl\lfloor d(n,p)+\epsilon \bigr\rfloor \Bigr] \to 1
+~~as~~n\to \infty.
+\end{equation}
+where
+\begin{equation*}
+d(n,p)=2\log_{\frac{1}{1-p}}(n)-2\log_{\frac{1}{1-p}}\log_{\frac{1}{1-p}}(n)
++1+2\log_{\frac{1}{1-p}}\left (\frac{e}{2}\right ).
+\end{equation*}
+</p>
+
+<p>
+We will also use the following asymptotic formula of the Bell number $B_n$ that appears
+in [<a href="#bibitem-5">5</a>]. Recall that $B_n$ is the number of ways to partition a set of $n$ elements
+into different subsets.
+\begin{equation}\label{lab:3.3}
+\frac{\log (B_n)}{n}=\log (n) -\log (\log (n)) -1 + o(1).
+\end{equation}
+</p>
+
+<div class="theorem">
+Let $G(n,p,q)$ be the random signed graph on $n$ vertices where $p$ and $q$ are fixed,
+$0 < p+q < 1$.
+
+If $p\geq q$ then, a.a.s. we  have
+\begin{equation*}
+2\log_an-2\log_a\log_an+A \leq \beta'(G(n,p,q)) \leq 2\log_an-2\log_a\log_a\log_an+B,
+\end{equation*}
+where $a=1/(1-q)$ and $A$ and $B$ are constants.
+
+If $p< q$ then, a.a.s. we  have
+\begin{equation*}
+2\log_bn-2\log_b\log_bn+A' \leq \beta'(G(n,p,q)) \leq 2\log_bn-2\log_b\log_b\log_bn+B',
+\end{equation*}
+where $b=1/(1-p)$ and $A'$ and $B'$ are constants.
+</div>
+
+<div class="proof">
+
+For a given subset $S$ of $r$ vertices, we have
+
+\begin{equation*}
+\PP\left[S \text{ is weakly balanced }\right]
+=\sum\limits_{k=1}^{r}\sum_{~~\{S_1,\dots,S_k\}}(1-q)^{\sum\limits_{i=1}^{k}{n_i\choose 2}}
+(1-p)^{\sum\limits_{1\leq i< j \leq k}n_in_j},
+\end{equation*}
+
+where the the second sum is over all partitions $\{S_1,\dots,S_k\}$ of $S$ into $k$ different subsets
+and $|S_i|=n_i$ for $1\leq i \leq k$. Let $N_r$ be the number of subsets of vertices of size $r$ that
+induce a weakly balanced subgraph in $G(n,p,q)$.
+
+<div class="h">
+Case where  <span> $p\geq q$ </span> 
+</div>
+
+The lower bound follows from (\ref{lab:3.2}) and the second inequality of (\ref{lab:3.1}).
+To prove the upper bound, it is sufficient to show, by using Markov inequality,
+that the expectation $\EE(N_r)$ of $N_r$ tends to $0$ as $n\rightarrow \infty$.
+Now, using the fact that $1-p \leq 1-q$, we have that
+\begin{equation*}
+\EE\left( N_r\right) \leq {n\choose r}\PP\left[S \text{ is weakly balanced}
+\right] \leq {n\choose r} B_r(1-q)^\frac{r(r-1)}{2}.
+\end{equation*}
+Using Stirling's formula, we get
+\begin{equation*}
+\EE\left( N_r\right) \leq \frac{1}{\sqrt{2\pi r}}
+\left ( \frac{enB_r^{\frac{1}{r}}(1-q)^{\frac{r-1}{2}}}{r}\right )^r.
+\end{equation*}
+Thus, $\EE(N_r)\to 0$ if
+\begin{equation}\label{lab:3.4}
+\frac{enB_r^{\frac{1}{r}}(1-q)^{\frac{r-1}{2}}}{r}\leq 1.
+\end{equation}
+Condition (\ref{lab:3.4}) is satisfied if
+\begin{equation*}
+1 +\log n + \frac{\log B_r}{r} +\frac{r-1}{2}\log (1-q)-\log r\leq 0.
+\end{equation*}
+Now, set
+\begin{equation*}
+r := 2 \log_a n - 2 \log_a \log_a \log_a n + B,
+\end{equation*}
+where $B$ is a sufficiently large constant.
+
+By using (\ref{lab:3.3}), we now see that condition  (\ref{lab:3.4}) is satisfied, as required.
+
+<div class="h">
+Case where $p < q$
+</div>
+
+The lower bound follows from (\ref{lab:3.2}) and the first inequality of (\ref{lab:3.1}).
+For the upper bound, note that $1-p > 1-q$ from which it follows that
+\begin{equation*}
+\EE\left( N_r\right) \leq {n\choose r}\PP\left[S \text{ is weakly balanced}\right]
+\leq {n\choose r} B_r(1-p)^{\frac{r(r-1)}{2}}.\\
+\end{equation*}
+Now, an identical argument as in the previous case finishes the proof.
+</div>
+
+<h2>Weak Frustration Index</h2>
+
+<p>
+Our aim is to prove the following theorem on the weak frustration index, an analog of
+the result found in [<a href="#bibitem-7">7</a>] in the case of frustration index.  Although one could
+expect that weak frustration index should be smaller than the frustration index,
+surprisingly, this is not the case.
+</p>
+
+<p>
+Given a signed graph $G$, and a partition $\left\{S_1,\dots, S_k\right\}$ of
+$V(G)$, define $Y_{S_1,\dots, S_k} = \sum\Delta^{-}_{S_i} + \sum_{i\lt j}\Delta^{+}_{S_i,S_j}$, 
+where $\Delta^{-}_{S_i}$ is the number of negative edges
+in the subgraph $G[S_i]$ induced by $S_i$, and $\Delta^{+}_{S_i,S_j}$ is the number of positive
+edges which have one endpoint in $S_i$ and one endpoint in $S_j$. We will use following Lemma
+whose proof is immediate.
+</p>
+
+<div class="lemma">
+For every signed graph $G$, $\delta(G) = \min_{P=\{S_1,\dots,S_k\}} Y_{S_1,\dots,S_k}$, 
+where the minimum is taken over all partitions $P$ of $V(G)$.
+</div>
+
+<div class="theorem">
+Let $0 < p < 1/2$ be fixed. Then, for any fixed $\epsilon > 0$, the weak
+frustration index $\delta$ of $G(n,p,p)$ satisfies
+\begin{equation*}
+\PP\Big[(1-\epsilon)\frac{n^2p}{2} \leq \delta \leq
+(1+\epsilon)\frac{n^2p}{2}\Big] \to 1
+\end{equation*}
+as $n \to \infty$.
+</div>
+
+<div class="proof">
+Let $\left\{S_1,\dots, S_k\right\}$ be a fixed partition of the vertex set of $G(n,p,p)$.
+Let $Y_{S_1,\dots,S_k}$ be the random variable defined as before.
+It is easily seen that $Y_{S_1,\dots,S_k}$ has a binomial distribution,
+$Y_{S_1,\dots,S_k} \sim {\rm Bin} \left( \binom{n}{2}, p \right)$.
+Thus $\EE[Y_{S_1,\dots,S_k}] = n(n-1)p/2$. Since $\delta \leq Y_{S_1,\dots,S_k}$, the inequality
+from above is an immediate consequence of the law of large numbers. To prove the lower bound, we
+use the following (upper tail) Chernoff bound (see [<a href="#bibitem-2">2</a>], page 12).
+\begin{equation}\label{lab:4.1}
+ \PP\Big[ Y_{S_1,\dots,S_k} < (1-\epsilon)\frac{n^2p}{2}\Big] \leq \exp\Big[\frac{\epsilon^2n^2p}{4}\Big]
+\end{equation}
+
+Now, by Lemma \ref{lem:4.1}, we have
+\begin{eqnarray*}
+\PP\Big[\delta < (1-\epsilon)\frac{n^2p}{2}\Big]
+&\leq& \PP\Big [\exists \text{ a partition }\{S_1,\dots,S_k\}~,~
+Y_{S_1,\dots,S_k} < ~(1-\epsilon)\frac{n^2p}{2}\Big ]\\
+&\leq&B_n \PP\Big[Y_{S_1,\dots,S_k} < ~(1-\epsilon)\frac{n^2p}{2}\Big ]
+\end{eqnarray*}
+
+where $B_n$ denotes the Bell number. Relations (\ref{lab:3.3}) and (\ref{lab:4.1}) implie
+\begin{equation*}
+\PP\Big[\delta < (1-\epsilon)\frac{n^2p}{2}\Big]
+\leq n^n \exp \Big[ - \frac{\epsilon^2n^2p}{4}\Big]=o(1).
+\end{equation*}
+</div>
+
+<h2>Relative weak unbalance</h2>
+
+In this section we study relative weak unbalance by examining the ratio $\rho(m) = {X^u_m/X_m}$ of
+the number $X^u_m$ of unbalanced $m$-cycles to the total number $X_m$ of $m$-cycles in $ G(n,p,q)$.
+We set $\rho(m)=0$ if there are no cycles of length $m$ in $ G(n,p,q)$. Recall that a cycle is
+\emph{ unbalanced} if it contains exactly one negative edge. Clearly, the expectation of $X_m$ is given by
+\begin{equation*}
+\EE(X_m)=\frac{(m-1)!}{2}{n\choose m}(p+q)^m.
+\end{equation*}
+In order to prove Theorem \ref{thm:5.2} below, we use the following lemma
+from [<a href="#bibitem-7">7</a>] concerning the concentration of $X_m$ around its expected value.
+
+<div class="lemma">
+Let $m$ be a fixed integer, $3 \leq m\leq n$. Then, for any arbitrarily small $\epsilon >0$,
+\begin{equation}\label{lab:5.1}
+\PP\Bigl[~\big\vert~X_m-\EE(X_m)~\big\vert~>~\epsilon \EE\big(X_m\big)~\Bigr]\leq
+\frac{4m^{2m+3}}{\epsilon^2 n(p+q)^m}.
+\end{equation}
+</div>
+
+<div class="theorem" id="th:5.2">
+Let $m$ be a fixed integer, $m \geq 3$.
+Let $p, q \gt 0$ be fixed, $0 \lt p+q \leq 1$. Then, for any $\epsilon \gt 0$, the relative weak unbalance
+$\rho(m)$ of $G(n,p,q)$ satisfies
+\begin{equation*}
+\PP\Big[\big\vert \rho(m)-\frac{qp^{m-1}}{(p+q)^m}\big\vert \leq \epsilon\Big]\to 1~~~\text{ as }~~~n\to \infty.
+\end{equation*}
+</div>
+
+<div class="proof">
+We denote by ${\mathcal C}_m={\mathcal C}_m(G(n,p,q))$ the set of all $m$-cycles of $G(n,p,q)$.
+Let $C$ be a fixed $m$-cycle. Clearly, we have
+\begin{equation*}
+\PP\left[ C\text{ is unbalanced }\Bigm\vert~C\in{\mathcal C}_m(G(n,p,q))\right]=
+\frac{mqp^{m-1}}{(p+q)^m}.
+\end{equation*}
+
+<div class="h">
+Expectation of $\rho_m$ 
+</div>
+
+For $k\geq 1$, we have
+\begin{equation*}
+\EE\Bigl(X_{m}^u~\Bigm\vert~X_m=k\Bigr)=k\frac{mqp^{m-1}}{(p+q)^m}.
+\end{equation*}
+Thus
+\begin{equation*}
+\EE\Bigl(\rho(m)~\Bigm\vert~X_m=k\Bigr)=\frac{mqp^{m-1}}{(p+q)^m}
+\end{equation*}
+and so
+\begin{equation*}
+\EE\Bigl(\rho(m)\Bigr)=\frac{mqp^{m-1}}{(p+q)^m}.
+\end{equation*}
+
+<div class="h">
+Variance of $\rho(m)$
+</div>
+
+We need to prove that, for any $\epsilon>0$,
+\begin{equation*}
+\PP\Bigl[\left|\rho(m)-\EE(\rho(m))\right|>\epsilon\Bigr]\to 0
+ \textit{~as~}n\to \infty.
+\end{equation*}
+By conditioning on the event $\left\{\left|X_m-\EE(X_m)\right|>\epsilon \EE(X_m)\right\}$ and
+its complement, we get
+\begin{multline}\label{lab:5.2}
+\PP\Bigl[\left|\rho(m)-\EE(\rho(m))\right|>\epsilon\Bigr]
+\leq\PP\Bigl[\left|X_m-\EE(X_m)\right|>\epsilon \EE(X_m)\Bigr]~+\\
+\PP\Bigl[\left|\rho(m)-\EE(\rho(m))\right|>\epsilon~\wedge~
+(1-\epsilon)\EE(X_m)\leq X_m\leq(1+\epsilon)\EE(X_m)\Bigr].
+\end{multline}
+
+By Lemma \ref{lem:5.1}, the first term of the right-hand side of the above inequality tends to $0$
+whenever $\epsilon\sqrt{n}\to\infty$ as $n\rightarrow\infty$.
+Then, it suffices to show that the second term tends to $0$ as $n\rightarrow\infty$.
+
+Clearly
+\begin{multline*}
+\PP\Bigl[\left|\rho(m)-\EE(\rho(m))\right|>\epsilon~\wedge~
+(1-\epsilon)\EE(X_m)\leq X_m\leq(1+\epsilon)\EE(X_m)\Bigr]\\
+=\sum_{(1-\epsilon)\EE(X_m)\leq k \leq (1+\epsilon)\EE(X_m)}
+\PP\Bigl[\left|\rho(m)-\EE(\rho(m))\right|>\epsilon~\wedge~ X_m=k \Bigr]~~~~~~~~~~\\
+=\sum_{k}\sum_{C_1,\dots,C_k}\PP\Bigl[\left|\rho(m)-\EE(\rho(m))\right|>\epsilon~\Big\vert~
+{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\} \Bigr]\\
+\times\PP\Bigl[{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\} \Bigr],
+\end{multline*}
+where the second above sum is over all possible sets of $k$ cycles of size $m$ in $G(n,p,q)$.
+In order to apply properly Chebyshev's inequality, we observe that for any fixed set
+$\{C_1,\dots,C_k\}$ of $k$ $m$-cycles, we have
+\begin{equation*}
+\EE(\rho(m))=\EE\left(\rho(m)~\Big\vert~ {\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\right).
+\end{equation*}
+Thus
+\begin{multline}\label{lab:5.3}
+\PP\Bigl[\left|\rho(m)-\EE(\rho(m))\right|>\epsilon~\wedge~
+(1-\epsilon)\EE(X_m)\leq X_m\leq(1+\epsilon)\EE(X_m)\Bigr]\\
+\leq\frac{1}{\epsilon^2}\sum_{k}\sum_{C_1,\dots,C_k}
+\var\Bigl[\rho(m)~\Big\vert~ {\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\} \Bigr]
+\times\PP\Bigl[{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\} \Bigr].
+\end{multline}
+Let $\{C_1,\dots,C_k\}$ be a fixed set of $k$ $m$-cycles.
+\nopagebreak
+\begin{eqnarray*}
+&&\EE\Bigl[\rho^2(m)~\Big\vert~ {\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]\\
+&&~~~~~=~\frac{1}{k^2} \EE\Bigl[(X_m^u)^2~\Big\vert~
+{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]\\
+&&~~~~~=~\frac{1}{k^2}\sum_{1\leq i,j \leq k}\PP\Bigl[C_i,C_j
+\text{ are unbalanced }\Big\vert~
+{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]\\
+&&~~~~~=~\frac{1}{k^2}\sum_{C_i\cap C_j=\emptyset}
+\PP\Bigl[C_i,C_j\text{ are unbalanced }\Big\vert~
+{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]\\
+&&~~~~~~~~~~+~\frac{1}{k^2}\sum_{C_i\cap C_j\neq\emptyset}
+\PP\Bigl[C_i,C_j\text{ are unbalanced }\Big\vert~
+{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]\\
+&&~~~~~\leq~\left[\frac{1}{k}\sum_{1\leq i \leq k}
+\PP\Bigl[C_i\text{ is unbalanced }\Big\vert~
+{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]
+\right]^2\\
+&&~~~~~~~~~~+~\frac{1}{k^2}\sum_{l=1}^m\left(\sum_{|C_i\cap C_j|=l}
+\PP\Bigl[C_i,C_j\text{ are unbalanced }\Big\vert~
+{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]\right),
+\end{eqnarray*}
+
+where $|C_i\cap C_j|=l$ means that $C_i$ and $C_j$ have $l$ vertices in common.
+For every $l\geq 1$, the number of pairs $(C_i,C_j)$ having exactly $l$ vertices in common is
+at most
+\begin{equation*}
+\left((m-1)!/2\right)^2{n\choose m}{n\choose m-l}=O(n^{2m-l}).
+\end{equation*}
+Since $m$ is fixed (not depending on $n$), the last sum in the double sum above is at most $O(n^{2m-1})$.
+Thus
+\begin{equation*}
+\EE\Bigl[\rho^2(m)~\Big\vert~ {\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]\leq
+\EE^2\Bigl[\rho(m)~\Big\vert~ {\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]
++\frac{1}{k^2} O(n^{2m-1}).
+\end{equation*}
+That is
+\begin{equation*}
+ \var\Bigl[\rho(m)~\Big\vert~ {\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]
+\leq \frac{1}{k^2} O(n^{2m-1}).
+\end{equation*}
+Since $k\geq(1-\epsilon)\EE(X_m)= (1-\epsilon) \Omega(n^m)$, we get
+\begin{equation}\label{lab:5.4}
+ \var\Bigl[\rho(m)~\Big\vert~ {\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\}\Bigr]\leq
+\frac{1}{(1-\epsilon)^2} O\left(\frac{1}{n}\right).
+\end{equation}
+
+(\ref{lab:5.4}), (\ref{lab:5.3}), (\ref{lab:5.2}) and (\ref{lab:5.1}) give
+\begin{eqnarray*}
+&&\PP\Bigl[\left|\rho(m)-\EE(\rho(m))\right|>\epsilon\Bigr] \\
+&&~~~~ \leq ~ O\left (\frac{1}{n\epsilon^2}\right ) +
+O \left(\frac{1}{n \epsilon^2(1-\epsilon)^2} \right)
+\sum_{k}\sum_{C_1,\dots,C_k}\PP\Bigl[{\mathcal C}_m(G(n,p,q))=\{C_1,\dots,C_k\} \Bigr] \\
+&&~~~~ \leq ~ O\left (\frac{1}{n\epsilon^2}\right ) +
+O \left(\frac{1}{n \epsilon^2(1-\epsilon)^2} \right)\sum_{k}\PP\Bigl[X_m=k \Bigr] \\
+&&~~~~ \leq ~ O\left (\frac{1}{n\epsilon^2}\right ).
+\end{eqnarray*}
+Thus, by setting $\epsilon = 1/ \log n $, we conclude the proof.
+</div>
+
+<p>
+An analog of <a href="#th:5.2">Theorem 5.2.</a> for balance was proved in [<a href="#bibitem-7">7</a>]:
+the authors showed that a.a.s. in $G(n,p,p)$,  $\rho_c(m) \rightarrow 1/2$ as
+$n\rightarrow \infty$. The method of the proof of Theorem \ref{thm:5.2}
+allows us to significantly strengthen this result as follows.
+</p>
+
+<div class="theorem">
+Let $m$ be a fixed integer, $m \geq 3$. Suppose
+that $p, q$ are fixed. Then, for any $\epsilon >0$, the relative unbalance
+$\rho_c(m)$ of $G(n,p,q)$ satisfies
+\begin{equation*}
+\PP\Big[\big\vert \rho_c(m)-\frac{q}{p+q}\big\vert \leq \epsilon\Big]\to 1\textit{~~~~as~~}n\to \infty.
+\end{equation*}
+</div>
+
+<p>
+As the proof of Theorem \ref{thm:5.3} is nearly identical to that
+of Theorem \ref{thm:5.2}, we omit it.
+</p>
+
+<div class="h" style="margin-top: 20px;">
+Acknowledgment
+</div>
+
+<p>
+We would like to thank an anonymous referee whose suggestions led to a substantial improvement
+of the results of the paper.
+</p>
+
+<div id="biblio">
+
+<ol id="bibliography">
+<li id="bibitem-1">T. Antal, P. Krapivsky, and S. Redner, Social balance on networks: The dynamics of friendship and enmity, <i>Physica D: Nonlinear Phenomena</i>, 224(1-2), 130-136, dec 2006.</li>
+<li id="bibitem-2">B. Bollob\'as, <i>Random Graphs</i>, Cambridge University Press, 2 edition, 2001.</li>
+<li id="bibitem-3">D. Cartwright and F. Harary, Structural balance: a generalization of heider's theory, <i>Psychological Review</i>, 63(5), 277-293, 1956.</li>
+<li id="bibitem-4">J. A. Davis, Clustering and structural balance in graphs, <i>Human Relations</i>, 20(2), 181-187, 1967.</li>
+<li id="bibitem-5">N. de Bruijn, <i>Asymptotic Methods in Analysis</i>, Dover Publications, 1981.</li>
+<li id="bibitem-6">D. A. Easley and J. M. Kleinberg, <i>Networks, Crowds, and Markets - Reasoning About a Highly Connected World,</i>&npsp; Cambridge University Press, 2010.</li>
+<li id="bibitem-7">A. El Maftouhi, Y. Manoussakis, and O. Megalakaki, Balance in random signed graphs, <i>Internet Mathematics</i>, 8(4), 364-380, 2012.</li>
+<li id="bibitem-8">O. Frank and F. Harary, Balance in stochastic signed graphs, <i>Social Networks</i>, 2(2), 155-163, 1979.</li>
+<li id="bibitem-9">F. Heider, Attitudes and cognitive organization, <i>The Journal of Psychology</i>, 21(1), 107-112, 1946.</li>
+<li id="bibitem-10">S. Janson, T. Luczak, and A. Rucinski, <i>Random Graphs</i>, Wiley-Interscience, New York, 2000.</li>
+<li id="bibitem-11">S. A. Marvel, S. H. Strogatz, and J. M. Kleinberg, Energy landscape of social balance, <i>Physical Review Letters</i>, 103:198701, 2009.</li>
+<li id="bibitem-12">D. W. Matula, The largest clique size in a random graph, Technical Report CS 7608, Department of Computer Science, Southern Methodist University Dallas, Texas 75275, 1976.</li>
+<li id="bibitem-13">T. Zaslavsky, A mathematical bibliography of signed and gain graphs and allied areas, <i>The Electronic Journal of Combinatorics</i>, 5, Dynamic Surveys 8, 1998.</li>
+</ol>
+
+</div>
+<!-- end #biblio -->
+
+</div>
+<!-- end #math-content -->
+
+							
+<div style="clear: both;">&nbsp;</div>
+
+<h2 style="text-align: center;">Comments</h2>
+<script>displayComments();</script>
+<div id="comments-info"></div>
+<div id="comments"></div>
+<div id="load-more" style="text-align: center;">
+<button id="more" onClick="loadMoreComments()">Load More Comments</button>
+</div>
+
+<h2>Add a Comment</h2>
+
+<div>
+<p>Your email address will not be published. Required fields are marked *</p>
+</div>
+
+<div class="comments-form">
+<form onsubmit="return postComment()" id="comment-form" autocomplete="off">
+	<ul>
+		<li><input id="name" name="username" type="text" placeholder="Name" required="" value="" /></li>
+		<li><input id="email" name="useremail" type="text" placeholder="Email" required="" value="" /></li>
+		<li><textarea id="comment" name="comment" placeholder="Comment" required=""></textarea></li>
+		<li><input id="submit" type="submit" value="Post" /></li>
+	</ul>
+</form>
+</div>
+
+	
+</div>
+<!-- end #content -->
+
+<!-- start #footer -->
+<div id="footer">
+	<p>&copy; 2023 &nbsp; - &nbsp; www.maftouhi.org</p>
+</div>
+<!-- end #footer -->
+
+</div>
+<!-- end #wrapper -->
+
+</body>
+</html>
